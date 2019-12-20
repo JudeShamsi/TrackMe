@@ -1,2 +1,2 @@
-# TrackMe
+# TrackMyFinances
 Personal financial tracker
