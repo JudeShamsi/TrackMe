@@ -1,10 +1,8 @@
-package model.items;
-
 import javafx.scene.control.TextField;
 
 import java.util.LinkedList;
 import java.util.List;
-import ui.PageManager;
+
 
 //package ca.ubc.cs.inventory.model.items;
 
@@ -63,15 +61,15 @@ public class FinancialManager {
         this.savings = savings;
     }
 
-//    @Override
-//    public void update(double daily) {
-//        for (Item i: items) {
-//            limit = i.getPrice() + limit;
-//        }
-//        if (limit > daily) {
-//            pageManager.updateNotification();
-//        }
-//    }
+
+    public void update(double daily) {
+        for (Item i: items) {
+            limit = i.getPrice() + limit;
+        }
+        if (limit > daily) {
+            pageManager.updateNotification();
+        }
+    }
 
 }
 

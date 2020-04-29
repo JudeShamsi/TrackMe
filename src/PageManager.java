@@ -1,4 +1,4 @@
-package ui;
+
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -17,8 +17,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-import model.ItemManager;
-import model.items.FinancialManager;
+
 
 
 public class PageManager {

@@ -1,8 +1,6 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ui.PageManager;
-
 
 public class Main extends Application {
 

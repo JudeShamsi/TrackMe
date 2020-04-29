@@ -1,6 +1,4 @@
-package model;
 
-import model.items.Item;
 
 import java.io.File;
 import java.io.FileNotFoundException;
