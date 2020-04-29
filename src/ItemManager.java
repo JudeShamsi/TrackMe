@@ -33,8 +33,8 @@ public class ItemManager {
         }
     }
 
-    public int getTotalExpenses() {
-        int total = 0;
+    public double getTotalExpenses() {
+        double total = 0;
         for (Item i: items) {
             total = i.getPrice() + total;
         }
@@ -79,7 +79,7 @@ public class ItemManager {
     }
 
     public void createItem(String name, String price) {
-        Item foodItem = new Item(name, Integer.parseInt(price));
+        Item foodItem = new Item(name, Double.parseDouble(price));
         addItemsToList(foodItem);
         save();
         listCategories();

@@ -9,10 +9,10 @@ import java.util.List;
 
 public class FinancialManager {
 
-    private int income;
-    private int expenses;
-    private int expenditure;
-    private int savings;
+    private double income;
+    private double expenses;
+    private double expenditure;
+    private double savings;
     private double limit;
     private List<Item> items;
     private TextField trialexp;
@@ -29,35 +29,35 @@ public class FinancialManager {
 
     }
 
-    public int getIncome() {
+    public double getIncome() {
         return income;
     }
 
-    public int getExpenses() {
+    public double getExpenses() {
         return expenses;
     }
 
-    public int getExpenditure() {
+    public double getExpenditure() {
         return (income - (expenses + savings));
     }
 
-    public int getSavings() {
+    public double getSavings() {
         return savings;
     }
 
-    public void setIncome(int income) {
+    public void setIncome(double income) {
         this.income = income;
     }
 
-    public void setExpenses(int expenses) {
+    public void setExpenses(double expenses) {
         this.expenses = expenses;
     }
 
-    public void setExpenditure(int expenditure) {
+    public void setExpenditure(double expenditure) {
         this.expenditure = expenditure;
     }
 
-    public void setSavings(int savings) {
+    public void setSavings(double savings) {
         this.savings = savings;
     }
 

@@ -1,6 +1,6 @@
-Item Name: Chevron
-Item Price: 55
-Date Purchased: 2020-41-29 01:41:01
 Item Name: UBC Tuition WT2 2020
-Item Price: 4590
-Date Purchased: 2020-41-29 01:41:01
+Item Price: 4509.67
+Date Purchased: 2020-20-29 02:20:25
+Item Name: Chevron
+Item Price: 55.0
+Date Purchased: 2020-20-29 02:20:25

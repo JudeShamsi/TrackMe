@@ -200,11 +200,12 @@ public class PageManager {
 
         totalExpenditure = new TextField();
         enterGoals = new Button("Calculate Daily Expenditure");
+
         enterGoals.setOnAction(e -> calculateGoals());
 
-//        trackExpenditure = new Button("Track Daily Expenditure");
-//        System.out.println("totalExpenditure"+totalExpenditure.getText());
-//        trackExpenditure.setOnAction(e -> beginTracking(Double.parseDouble(totalExpenditure.getText())));
+        trackExpenditure = new Button("Track Daily Expenditure");
+        System.out.println("totalExpenditure"+totalExpenditure.getText());
+        trackExpenditure.setOnAction(e -> beginTracking(Double.parseDouble(totalExpenditure.getText())));
 
         trialexpenditure = new TextField();
 
@@ -215,7 +216,7 @@ public class PageManager {
 
         VBox expensesBox = new VBox(30);
         expensesBox.setPadding(new Insets(40, 40, 40, 40));
-        expensesBox.getChildren().addAll(askIncome, askSavings, askExpenses, enterGoals, totalExpenditure, trialexpenditure, refreshGoals, backToHomepage);
+        expensesBox.getChildren().addAll(askIncome, askSavings, askExpenses, enterGoals, totalExpenditure, refreshGoals, backToHomepage);
         String style = "-fx-background-color: rgba(255, 255, 255, 0.5);";
         expensesBox.setStyle(style);
 
@@ -305,27 +306,29 @@ public class PageManager {
     }
 
     public void printTotal() {
-        int totalExpense  = itemManager.getTotalExpenses();
-        printItemsText.setText("Total Amount Spent: $" + Integer.toString(totalExpense));
+        double totalExpense  = itemManager.getTotalExpenses();
+        printItemsText.setText("Total Amount Spent: $" + Double.toString(totalExpense));
     }
 
     public void calculateGoals() {
-        int income = Integer.parseInt(askIncome.getText());
-        int savings = Integer.parseInt(askSavings.getText());
-        int expenses = Integer.parseInt(askExpenses.getText());
-        int decreaseSavings = 0;
-        int decreaseExpenses = 0;
+        double income = Double.parseDouble(askIncome.getText());
+        double savings = Double.parseDouble(askSavings.getText());
+        double expenses = Double.parseDouble(askExpenses.getText());
+        double decreaseSavings = 0.0;
+        double decreaseExpenses = 0.0;
         double totalDailyExpenditure = 0.0;
 
-        if (((income - savings) - expenses) <= 0) {
+        if (((income - savings) - expenses) <= 0 || expenses > income) {
             totalExpenditure.setText("You are out of funds to spend for the month");
         } else {
             decreaseSavings = income-savings;
             decreaseExpenses = decreaseSavings - expenses;
             totalDailyExpenditure = (decreaseExpenses/30);
+            totalDailyExpenditure = (double) Math.round(totalDailyExpenditure*100)/100;
+            totalExpenditure.setText(Double.toString(totalDailyExpenditure));
         }
 
-        totalExpenditure.setText(Double.toString(totalDailyExpenditure));
+
 
     }
 

@@ -7,13 +7,13 @@ import java.util.Calendar;
 public class Item {
 
     private String description;
-    private int price;
+    private double price;
     private DateFormat date = new SimpleDateFormat("dd/MM/yy");
     private Calendar calendar = Calendar.getInstance();
     private String companyName;
 
 
-    public Item(String description, int price) {
+    public Item(String description, double price) {
         this.description = description;
         this.price = price;
         companyName = null;
@@ -23,11 +23,11 @@ public class Item {
         return description;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public int getTotalPrice() {
+    public double getTotalPrice() {
         return price;
     }
 
