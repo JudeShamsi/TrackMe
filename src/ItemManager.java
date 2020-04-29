@@ -4,9 +4,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class ItemManager {
 
@@ -22,8 +22,14 @@ public class ItemManager {
 
     public void listCategories() {
         for (Item i: items) {
-            System.out.println("Item Name: " + i.getDescription() + "\nItem Price: " + i.getPrice() + "\nDate Purchased: ");
-            i.setDate();
+            //Date d = new Date();
+//            java.util.Date date=new java.util.Date();
+//            System.out.println(date);
+            Date date = Calendar.getInstance().getTime();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+            String strDate = dateFormat.format(date);
+            System.out.println("Item Name: " + i.getDescription() + "\nItem Price: " + i.getPrice());
+
         }
     }
 
