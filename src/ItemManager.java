@@ -28,7 +28,7 @@ public class ItemManager {
             Date date = Calendar.getInstance().getTime();
             DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
             String strDate = dateFormat.format(date);
-            System.out.println("Item Name: " + i.getDescription() + "\nItem Price: " + i.getPrice());
+            System.out.println("Item Name: " + i.getDescription() + "\nItem Price: " + i.getPrice() + "\nDate Purchased: " + strDate);
 
         }
     }
@@ -52,8 +52,10 @@ public class ItemManager {
             PrintWriter writer = new PrintWriter("ItemsInList.txt");
 
             for (Item i: items) {
-                writer.println("Item Name: " + i.getDescription() + "\nItem Price: " + i.getPrice() + "\nDate Purchased: ");
-                i.setDate();
+                Date date = Calendar.getInstance().getTime();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+                String strDate = dateFormat.format(date);
+                writer.println("Item Name: " + i.getDescription() + "\nItem Price: " + i.getPrice() + "\nDate Purchased: "+ strDate);
             }
 
             writer.close();
